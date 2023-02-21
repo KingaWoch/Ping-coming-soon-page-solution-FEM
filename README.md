@@ -28,13 +28,15 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
+![](./screenshot-mobile.png)
+![](./screenshot-mobile-error.png)
+![](./screenshot-desktop.png)
+![](./screenshot-desktop-error.png)
 
 
 ### Links
 
-- Live Site URL: [Live Site at Netlify]()
+- Live Site URL: [Live Site at Netlify](https://ping-coming-soon-kw.netlify.app)
 
 ## My process
 

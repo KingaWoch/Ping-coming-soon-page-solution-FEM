@@ -29,7 +29,6 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 1rem;
 }
@@ -39,6 +38,8 @@ body {
     flex-direction: column;
     align-items: center;
     max-width: 700px;
+    gap: 2rem;
+    margin: 6rem 3rem 0;
 }
 
 h1, h1 span {
@@ -56,31 +57,53 @@ header {
 }
 
 header p {
-    font-size: var(--font-size)
+    font-size: var(--font-size);
+    padding-top: 1rem;
 }
 
 .notify-container {
     display: flex;
     width: 100%;
+    gap: 1rem;
 }
 
 .input-container {
     display: flex;
     flex-direction: column;
     width: 60%;
+    gap: 0.4rem;
 }
 
 input {
-    padding: 0.5rem 1rem;
+    padding: 1rem 1.5rem;
     border-radius: 2rem;
-    border: 1px solid var(--Gray);
-    opacity: 0.5;
+    border: 1px solid var(--Pale-Blue);
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: 1px solid var(--Very-Dark-Blue);
+}
+
+input[type=email]::placeholder {
+    color: var(--Pale-Blue);
+
+}
+
+input.invalid {
+    outline: 2px solid var(--Light-Red);
 }
 
 .error {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     font-style: italic;
     color: var(--Light-Red);
+    padding: 0.2rem 1.5rem;
+    display: none;
+}
+
+.error.visible {
+    display: block;
 }
 
 button {
@@ -89,23 +112,46 @@ button {
     border-radius: 2rem;
     color: white;
     font-weight: 600;
+    font-size: 1rem;
     cursor: pointer;
     width: 40%;
+    height: 53px;
+    -webkit-box-shadow: 0px 10px 16px 0px rgba(79,125,243,0.25);
+    -moz-box-shadow: 0px 10px 16px 0px rgba(79,125,243,0.25);
+    box-shadow: 0px 10px 16px 0px rgba(79,125,243,0.25);
+}
+
+button:hover {
+    background-color: hsl(223, 87%, 69%);
+}
+
+.dashboard {
+    margin: 2rem 0;
 }
 
 .icons {
     display: flex;
     justify-content: center;
+    gap: 0.8rem;
 }
 
 .icon {
     border: 1px solid var(--Pale-Blue);
     border-radius: 50%;
-    width: 30px;
+    width: 35px;
     aspect-ratio: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+}
+
+.icon:hover {
+    background-color: var(--Blue);
+}
+
+.icon:hover i{
+    color: #fff;
 }
 
 i {
@@ -114,6 +160,31 @@ i {
 
 footer p {
     color: var(--Gray);
-    font-size: 0.7rem;
+    font-size: 0.8rem;
+    padding-top: 1.5rem;
 }
 
+
+/* RESPONSIVE */
+
+@media (max-width: 769px) {
+    h1, h1 span {
+        font-size: 1.6rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .notify-container {
+        flex-direction: column;
+    }
+
+    .input-container, button {
+        width: 100%;
+    }
+
+    .error {
+        text-align: center;
+    }
+}
